@@ -1,0 +1,9 @@
+{
+    "name": "sovware/directorist-dev-tools",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "DirectoristDevToolsAPP\\": "app/"
+        }
+    }
+}
