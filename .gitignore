@@ -1,0 +1,6 @@
+__*/
+/node_modules
+/vendor
+.DS_Store
+/.vscode
+/.idea
