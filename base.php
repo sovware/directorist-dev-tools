@@ -1,5 +1,4 @@
 <?php
-
 final class DirectoristDevTools {
     public static $instance = null;
 
