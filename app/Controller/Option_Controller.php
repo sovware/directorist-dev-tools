@@ -2,7 +2,7 @@
 
 namespace DirectoristDevToolsAPP\Controller;
 
-class OptionController {
+class Option_Controller {
     public static $option_prefix = '_ddt_';
     public static $default_options = [];
 

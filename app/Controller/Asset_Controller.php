@@ -2,7 +2,7 @@
 
 namespace DirectoristDevToolsAPP\Controller;
 
-class AssetController {
+class Asset_Controller {
     public $css_scrips = [];
     public $js_scrips  = [];
     
@@ -46,7 +46,7 @@ class AssetController {
 
     // update_global_atts_of_css_scripts
     public function update_global_atts_of_css_scripts( $scripts = [] ) {
-        $global_atts = OptionController::get_option('css_global_atts');
+        $global_atts = Option_Controller::get_option('css_global_atts');
 
         $global_atts = ( ! empty( $global_atts ) && is_array( $global_atts ) ) ? $global_atts : [];
         $updated_scripts = $scripts;
@@ -60,7 +60,7 @@ class AssetController {
 
     // update_global_atts_of_js_scripts
     public function update_global_atts_of_js_scripts( $scripts = [] ) {
-        $global_atts = OptionController::get_option('js_global_atts');
+        $global_atts = Option_Controller::get_option('js_global_atts');
 
         $global_atts = ( ! empty( $global_atts ) && is_array( $global_atts ) ) ? $global_atts : [];
         $updated_scripts = $scripts;

@@ -1,14 +1,18 @@
 <?php
 
 use DirectoristDevToolsAPP\Controller as Controller;
+use DirectoristDevToolsAPP\Traits;
 final class DirectoristDevTools {
+
+    use Traits\Service_Registrar;
+
     public static $instance = null;
 
     /**
      * Constructor
      */
     private function __construct() {
-        $this->register_controllers();
+        $this->register_serivces( $this->get_features() );
     }
 
     /**
@@ -23,34 +27,17 @@ final class DirectoristDevTools {
     }
 
     /**
-     * Get Controllers
+     * Get Features
      */
-    private function get_controllers() {
+    private function get_features() {
         return [
-            Controller\AssetController::class,
-            Controller\AdminMenuController::class,
+            // Services
+            Service\Directorist_UI_Kit::class,
+
+            // Controllers
+            Controller\Asset_Controller::class,
+            Controller\Admin_Menu\Admin_Menu_Controller::class,
         ];
-    }
-
-    /**
-     * Register Controllers
-     */
-    private function register_controllers() {
-        $controllers = $this->get_controllers();
-
-        foreach ( $controllers as $controller ) {
-            if ( ! class_exists( $controller ) ) {
-                continue;
-            }
-
-            $class = new $controller();
-
-            if ( ! method_exists( $class, 'run' ) ) {
-                continue;
-            }
-
-            $class->run();
-        }
     }
 }
 
