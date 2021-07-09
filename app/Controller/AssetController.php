@@ -37,7 +37,6 @@ class AssetController {
 
     // update_js_scripts
     public function update_js_scripts( $scripts = [] ) {
-        // $this->load_js_scripts();
         return self::merge_scripts( $scripts, $this->js_scrips );
     }
 
