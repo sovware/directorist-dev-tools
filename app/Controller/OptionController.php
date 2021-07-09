@@ -18,6 +18,11 @@ class OptionController {
 
     // get_option
     public static function get_option( $option_key = '' ) {
+
+        if ( isset( self::$default_options[ $option_key ] ) ) { 
+            return '';
+        }
+
         self::setup_default_options();
 
         return get_option( self::$option_prefix . $option_key, self::$default_options[ $option_key ], true );

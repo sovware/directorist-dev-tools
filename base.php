@@ -1,4 +1,6 @@
 <?php
+
+use DirectoristDevToolsAPP\Controller as Controller;
 final class DirectoristDevTools {
     public static $instance = null;
 
@@ -25,7 +27,8 @@ final class DirectoristDevTools {
      */
     private function get_controllers() {
         return [
-            DirectoristDevToolsAPP\Controller\AssetController::class,
+            Controller\AssetController::class,
+            Controller\AdminMenuController::class,
         ];
     }
 
