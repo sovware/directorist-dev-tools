@@ -19,6 +19,7 @@ class AssetController {
     // load_css_scripts
     public function load_css_scripts() {
         $new_css_scripts = [];
+        
         $this->css_scrips = $new_css_scripts;
     }
 
