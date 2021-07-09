@@ -32,11 +32,13 @@ class AssetController {
 
     // update_css_scripts
     public function update_css_scripts( $scripts = [] ) {
+
         return self::merge_scripts( $scripts, $this->css_scrips );
     }
 
     // update_js_scripts
     public function update_js_scripts( $scripts = [] ) {
+        
         return self::merge_scripts( $scripts, $this->js_scrips );
     }
 
