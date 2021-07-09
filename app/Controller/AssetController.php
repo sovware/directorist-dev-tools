@@ -12,14 +12,14 @@ class AssetController {
         add_filter( 'init', [ $this, 'load_css_scripts' ] );
         add_filter( 'init', [ $this, 'load_js_scripts' ] );
 
-        add_filter( 'directorist_js_scripts', [ $this, 'modify_js_scripts' ] );
-        add_filter( 'directorist_css_scripts', [ $this, 'modify_css_scripts' ] );
+        add_filter( 'directorist_js_scripts', [ $this, 'update_js_scripts' ] );
+        add_filter( 'directorist_css_scripts', [ $this, 'update_css_scripts' ] );
     }
 
     // load_css_scripts
     public function load_css_scripts() {
         $new_css_scripts = [];
-        
+
         $this->css_scrips = $new_css_scripts;
     }
 
@@ -30,13 +30,13 @@ class AssetController {
         $this->js_scrips = $new_js_scripts;
     }
 
-    // modify_css_scripts
-    public function modify_css_scripts( $scripts = [] ) {
+    // update_css_scripts
+    public function update_css_scripts( $scripts = [] ) {
         return self::merge_scripts( $scripts, $this->css_scrips );
     }
 
-    // modify_js_scripts
-    public function modify_js_scripts( $scripts = [] ) {
+    // update_js_scripts
+    public function update_js_scripts( $scripts = [] ) {
         // $this->load_js_scripts();
         return self::merge_scripts( $scripts, $this->js_scrips );
     }
